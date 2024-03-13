@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/idLogin2"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".login2">
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/idtextInplayUsser"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="80dp"
+        android:layout_marginEnd="32dp"
+        android:hint="Usuario"
+        app:endIconMode="clear_text"
+        app:helperText="Obligatorio"
+
+
+        app:helperTextTextColor="@color/design_default_color_error"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView3"
+        app:startIconDrawable="@drawable/usuario_1_">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/textInpEditUsser"
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="140dp"
+        android:layout_marginEnd="32dp"
+        android:text="Inicia Sesion"
+        android:textColor="@android:color/holo_blue_dark"
+        android:textSize="34sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/idtextInplayPass"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="32dp"
+        android:hint="Contraseña"
+        app:endIconMode="password_toggle"
+        app:helperText="Obligatorio"
+
+
+        app:helperTextTextColor="@color/design_default_color_error"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/idtextInplayUsser"
+        app:startIconDrawable="@drawable/bloquear">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/idtextinpeditPass"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPassword"
+            android:maxLength="10" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:id="@+id/idButtonLogin"
+        android:layout_width="293dp"
+        android:layout_height="51dp"
+        android:layout_marginTop="80dp"
+        android:backgroundTint="#2FBACC"
+        android:text="Iniciar"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/idtextInplayPass" />
+
+    <Button
+        android:id="@+id/idButtonRegistrar"
+        android:layout_width="291dp"
+        android:layout_height="54dp"
+        android:layout_marginTop="30dp"
+        android:backgroundTint="#0A9BAE"
+        android:text="Registrar Cuenta"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/idButtonLogin" />
+</androidx.constraintlayout.widget.ConstraintLayout>
