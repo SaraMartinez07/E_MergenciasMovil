@@ -2,9 +2,10 @@ package com.example.e_mergenciasmovil
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity
+import androidx.room.Index
 import androidx.room.PrimaryKey
 
-@Entity
+@Entity(indices = [Index(value = ["nombre"], unique = true)])
 data class Usuario (
     @PrimaryKey(autoGenerate = true) val id: Long = 0,
     @ColumnInfo(name = "nombre") val nombre: String,

@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.widget.Button
+import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -41,6 +42,13 @@ class login2 : AppCompatActivity() {
         }
         botonRegistrar.setOnClickListener {
             Registrar()
+        }
+
+        val textRecuperar = findViewById<TextView>(R.id.idTextRecuperar)
+        textRecuperar.setOnClickListener {
+            // Iniciar la actividad de recuperación de contraseña
+            val intent = Intent(this@login2, RecuperarC::class.java)
+            startActivity(intent)
         }
     }
 
@@ -87,7 +95,8 @@ class login2 : AppCompatActivity() {
 
     private fun verificarContraseña(contraseñaIngresada: String, contraseñaAlmacenada: String): Boolean {
         val hashedPassword = hashPassword(contraseñaIngresada)
-        return hashedPassword == contraseñaAlmacenada
+        val hashedPasswordAlmacenada = hashPassword(contraseñaAlmacenada) 
+        return hashedPassword == hashedPasswordAlmacenada
     }
 
     private fun mostrarMensaje(mensaje: String) {

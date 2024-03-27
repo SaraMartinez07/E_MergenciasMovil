@@ -1,9 +1,11 @@
 package com.example.e_mergenciasmovil
 
 import android.content.Context
+import android.content.Intent
 import android.widget.Toast
 import android.os.Bundle
 import android.widget.Button
+import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -29,6 +31,7 @@ class Registrar : AppCompatActivity() {
 
         // Obtener referencias a los elementos de la interfaz de usuario
         val botonGuardar = findViewById<Button>(R.id.idButtonGuardarReg)
+
 
         // Configurar el listener para el botón de guardar
         botonGuardar.setOnClickListener {
@@ -70,6 +73,11 @@ class Registrar : AppCompatActivity() {
             baseDeDatos.daoRegistrar().registrarUser(usuario)
             runOnUiThread {
                 mostrarMensaje("Datos guardados correctamente")
+
+                val intent = Intent(this@Registrar, LoginS::class.java)
+                startActivity(intent)
+                // Finalizar la actividad actual (Registrar)
+                finish()
             }
         }.start()
     }
